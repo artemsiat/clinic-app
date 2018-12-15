@@ -27,6 +27,8 @@ import java.util.List;
 @Component
 public class LoginFrame {
 
+    private final static String CSS_PATH = "/css/frame_root.css";
+
     private final AdminService adminService;
     private Stage stage;
 
@@ -72,6 +74,7 @@ public class LoginFrame {
             Scene scene = new Scene(root, 500, 350);
             scene.setFill(Color.BLUE);
             scene.setOnMouseClicked(event -> System.out.println("mouse clicked"));
+            scene.getStylesheets().add(CSS_PATH);
             stage.setScene(scene);
 
         } catch (Exception ex) {
