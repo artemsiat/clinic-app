@@ -1,0 +1,10 @@
+spring:
+  datasource:
+
+    url: jdbc:hsqldb:file:./data-base/hsqldb/clinicDB
+    username: admin
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update

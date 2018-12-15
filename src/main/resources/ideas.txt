@@ -1,0 +1,1 @@
+- keep application.yml outside of jar for quick configuration on the customer side.

@@ -1,0 +1,28 @@
+<configuration>
+
+    <property name="standard_pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{100} - %msg%n"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${standard_pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="main" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/main.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>${standard_pattern}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/main_%d{yyyy-MM-dd}.zip</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+        <appender-ref ref="main"/>
+    </root>
+
+</configuration>
